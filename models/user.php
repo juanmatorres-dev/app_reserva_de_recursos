@@ -1,9 +1,9 @@
 <?php
 
+include_once("db.php");
+
 class User
 {
-
-    private $db;
 
     /**
      * Constructor de la clase.
@@ -11,7 +11,7 @@ class User
      */
     public function __construct()
     {
-        $this->db = new mysqli("localhost", "root", "Celia2021", "acl");
+        DB::createConnection();
     }
 
     /**
@@ -22,7 +22,7 @@ class User
      */
     public function checkLogin($email, $pass)
     {
-       if ($result = $this->db->query("SELECT id FROM users WHERE email = '$email' AND password = '$pass'")) {
+       if ($result = DB::dataQuery("SELECT id FROM users WHERE email = '$email' AND password = '$pass'")) {
             if ($result->num_rows == 1) {
                 $usuario = $result->fetch_object();
                 return $usuario;
@@ -43,24 +43,10 @@ class User
      */
     public function getUserRoles($idUser)
     {
-        $resultArray = array();
-        if ($result = $this->db->query("SELECT roles.* FROM roles
+        $result = DB::dataQuery("SELECT roles.* FROM roles
                                             INNER JOIN `roles-users` ON roles.id = `roles-users`.idRol
-                                            WHERE `roles-users`.idUser = '$idUser'")) {
-            if ($result->num_rows > 0) {
-                while ($rol = $result->fetch_object()) {
-                    $resultArray[] = $rol;
-                }
-                return $resultArray;
-            }
-            else {
-                return null;
-            }
-        }
-        else {
-            return null;
-        }
-
+                                            WHERE `roles-users`.idUser = '$idUser'"));
+        return $result;
     }
 
     /**
@@ -70,24 +56,10 @@ class User
      */
     public function getUserPermissions($idRol)
     {
-        $resultArray = array();
-        if ($result = $this->db->query("SELECT permissions.* FROM permissions 
+        $result = DB::dataQuery("SELECT permissions.* FROM permissions 
                                             INNER JOIN `permissions-roles` ON permissions.id = `permissions-roles`.idPermission 
-                                            WHERE `permissions-roles`.idRol = '$idRol'")) {
-            if ($result->num_rows > 0) {
-                while ($permission = $result->fetch_object()) {
-                    $resultArray[] = $permission;
-                }
-                return $resultArray;
-            }
-            else {
-                return null;
-            }
-        }
-        else {
-            return null;
-        }
-
+                                            WHERE `permissions-roles`.idRol = '$idRol'"));
+        return $result;
     }
 }
 ?>
