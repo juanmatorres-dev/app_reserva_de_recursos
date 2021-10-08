@@ -1,4 +1,4 @@
-<?
+<?php
 
 /**
  * Capa de abstracción de datos.

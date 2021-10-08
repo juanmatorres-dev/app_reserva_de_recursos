@@ -23,8 +23,8 @@ class User
     public function checkLogin($email, $pass)
     {
        if ($result = DB::dataQuery("SELECT id FROM users WHERE email = '$email' AND password = '$pass'")) {
-            if ($result->num_rows == 1) {
-                $usuario = $result->fetch_object();
+            if ($result[0]->num_rows == 1) {
+                $usuario = $result[0]->fetch_object();
                 return $usuario;
             }
             else {
