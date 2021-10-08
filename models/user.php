@@ -45,7 +45,7 @@ class User
     {
         $result = DB::dataQuery("SELECT roles.* FROM roles
                                             INNER JOIN `roles-users` ON roles.id = `roles-users`.idRol
-                                            WHERE `roles-users`.idUser = '$idUser'"));
+                                            WHERE `roles-users`.idUser = '$idUser'");
         return $result;
     }
 
@@ -58,7 +58,7 @@ class User
     {
         $result = DB::dataQuery("SELECT permissions.* FROM permissions 
                                             INNER JOIN `permissions-roles` ON permissions.id = `permissions-roles`.idPermission 
-                                            WHERE `permissions-roles`.idRol = '$idRol'"));
+                                            WHERE `permissions-roles`.idRol = '$idRol'");
         return $result;
     }
 }

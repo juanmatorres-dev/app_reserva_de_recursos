@@ -15,8 +15,8 @@ class DB {
      * @return boolean true si la conexión se realiza con normalidad y false en caso de error
      */
     public static function createConnection() {
-        DB::connection = new mysqli($servidor, $usuario, $clave, $dbname);
-        if (DB::connection->connect_errno) return false;
+        DB::$connection = new mysqli($servidor, $usuario, $clave, $dbname);
+        if (DB::$connection->connect_errno) return false;
         else return true;
     }
 
@@ -24,7 +24,7 @@ class DB {
      * Cierra la conexión con la base de datos
      */
     public static function closeConnection() {
-    if (DB::connection) DB::connection->close();
+    if (DB::$connection) DB::$connection->close();
     }
 
     /**
@@ -34,7 +34,7 @@ class DB {
      * @return array Un array bidimensional con los resultados de la consulta (o null si la consulta no devolvió nada)
      */
     public static function dataQuery($sql) {
-        $res = DB::connection->query($sql);
+        $res = DB::$connection->query($sql);
         $resArray = array();
         if ($res->num_rows > 0) {
             $resArray = $res->fetch_all();
@@ -51,7 +51,7 @@ class DB {
      * @return integer El número de filas insertadas, modificadas o borradas por la sentencia SQL (0 si no produjo ningún efecto).
      */
     public static function dataManipulation($sql) {
-        DB::connection->query($sql);
-        return DB::connection->affected_rows;
+        DB::$connection->query($sql);
+        return DB::$connection->affected_rows;
     }
 }
