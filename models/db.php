@@ -18,7 +18,7 @@ class DB {
      * @return boolean true si la conexión se realiza con normalidad y false en caso de error
      */
     public static function createConnection($server, $username, $pass, $dbname) {
-        DB::$connection = new mysqli($servidor, $usuario, $clave, $dbname);
+        DB::$connection = new mysqli($server, $username, $pass, $dbname);
         if (DB::$connection->connect_errno) return false;
         else return true;
     }
