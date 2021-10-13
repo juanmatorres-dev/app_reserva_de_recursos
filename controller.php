@@ -20,6 +20,14 @@ class Controller
     }
 
     /**
+     * Muestra todos los recursos
+     */
+    public function showAllResources(){
+        $this->view->show("allResources");
+    }
+
+
+    /**
      * Muestra el formulario de login
      */
     public function showLoginForm()
