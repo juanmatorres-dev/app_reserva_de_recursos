@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 08-10-2021 a las 12:25:29
+-- Tiempo de generación: 13-10-2021 a las 10:08:34
 -- Versión del servidor: 8.0.21
 -- Versión de PHP: 7.3.21
 
@@ -20,6 +20,21 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `reserva_recursos`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `reservations`
+--
+
+DROP TABLE IF EXISTS `reservations`;
+CREATE TABLE IF NOT EXISTS `reservations` (
+  `idResource` int NOT NULL,
+  `idUser` int NOT NULL,
+  `idTimeSlot` int NOT NULL,
+  `date` datetime NOT NULL,
+  `remarks` varchar(10000) COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
 
