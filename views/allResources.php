@@ -1,6 +1,7 @@
 <?php
 
 echo "Mostrando todos los recursos 💻";
+echo "<br/> <br/><br/>";
 
 /*
 while ($fila = $result->fetch_object()) {
@@ -22,10 +23,27 @@ while ($fila = $result->fetch_object()) {
 }
 */
 
-
+echo "<table border=1>";
 foreach ($data['resources'] as $resources) {
-    echo $resources . "<br/>";
+    
+    echo "<tr>";
+    echo "<td>" . $resources['name'] . "</td>";
+    echo "<td>" . $resources['description'] . "</td>";
+    echo "<td>" . $resources['location'] . "</td>";
+    echo "<td>" . "<img src='" . $resources['image'] . "' width='50px'/>" . "</td>";
+
+    echo "<td>";
+    
+
+
+    echo "</td>";
+
+    //echo "<td><a class='btn btn-outline-info' href='index.php?action=formularioModificarPelicula&id_peliculas=" . $fila->id_peliculas . "'>Modificar</a></td>";
+    //echo "<td><a class='btn btn-outline-danger confirmacion' href='index.php?action=borrarPelicula&id_peliculas=" . $fila->id_peliculas . "'>Borrar</a></td>";
+    echo "</tr>";
 }
+
+echo "</table>";
 
 /*
 foreach ($data['permissions'] as $permission) {

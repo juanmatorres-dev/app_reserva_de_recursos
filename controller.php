@@ -23,14 +23,9 @@ class Controller
      * Muestra todos los recursos
      */
     public function showAllResources(){
-        // Borrar después 
-        // $data['permissions'] = $this->user->getUserPermissions(Security::getRolId());
-
-        
         $data['resources'] = DB::dataQuery("SELECT * FROM resources;");
-        //$data['resources'] = $this->user::DB(dataQuery("SELECT * FROM resources;"));   // db->dataQuery("SELECT * FROM resources;");
-
-        $this->view->show("allResources");
+        
+        $this->view->show("allResources" , $data);
     }
 
 

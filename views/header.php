@@ -1,7 +1,7 @@
 <!DOCTYPE html> 
 <html lang="es-ES"> 
 <head>
-    <title>ACL</title>
+    <title>Gestor de recursos</title>
     <!-- Aquí incluiría cualquier CSS o JS que vaya a usar por toda la web -->
     <!-- Por ejemplo: <link rel="stylesheet" type="text/css" href="assets/style.css"> -->
 </head>
