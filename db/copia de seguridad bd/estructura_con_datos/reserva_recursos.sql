@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 13-10-2021 a las 12:16:19
+-- Tiempo de generación: 13-10-2021 a las 12:22:45
 -- Versión del servidor: 8.0.21
 -- Versión de PHP: 7.3.21
 
@@ -50,14 +50,15 @@ CREATE TABLE IF NOT EXISTS `resources` (
   `location` varchar(500) COLLATE utf8_spanish_ci NOT NULL,
   `image` varchar(1000) COLLATE utf8_spanish_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `resources`
 --
 
 INSERT INTO `resources` (`id`, `name`, `description`, `location`, `image`) VALUES
-(1, 'Portátil Lenovo Z51', 'Portátil con el sistema operativo Windows 10', 'Aula 8', 'uploaded_images/resources/lenovo-laptop-z51.jpg');
+(1, 'Portátil Lenovo Z51', 'Portátil con el sistema operativo Windows 10', 'Aula 8', 'uploaded_images/resources/lenovo-laptop-z51.jpg'),
+(2, 'Salón de actos', 'Sala grande con escenario y asientos de tipo teatro', 'Planta 1 , a la izquierda de la escalera principal (puertas altas)', 'uploaded_images/resources/biblioteca.png');
 
 -- --------------------------------------------------------
 
