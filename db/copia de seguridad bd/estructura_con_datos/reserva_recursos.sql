@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 13-10-2021 a las 11:46:58
+-- Tiempo de generación: 13-10-2021 a las 12:16:19
 -- Versión del servidor: 8.0.21
 -- Versión de PHP: 7.3.21
 
@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `resources` (
 --
 
 INSERT INTO `resources` (`id`, `name`, `description`, `location`, `image`) VALUES
-(1, 'Portátil Lenovo Z51', 'Portátil con el sistema operativo Windows 10', 'Aula 8', '');
+(1, 'Portátil Lenovo Z51', 'Portátil con el sistema operativo Windows 10', 'Aula 8', 'uploaded_images/resources/lenovo-laptop-z51.jpg');
 
 -- --------------------------------------------------------
 
