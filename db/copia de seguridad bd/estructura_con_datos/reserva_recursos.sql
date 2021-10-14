@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 13-10-2021 a las 12:22:45
+-- Tiempo de generación: 14-10-2021 a las 22:14:10
 -- Versión del servidor: 8.0.21
 -- Versión de PHP: 7.3.21
 
@@ -33,8 +33,8 @@ CREATE TABLE IF NOT EXISTS `reservations` (
   `idUser` int NOT NULL,
   `idTimeSlot` int NOT NULL,
   `date` datetime NOT NULL,
-  `remarks` varchar(10000) COLLATE utf8_spanish_ci NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+  `remarks` varchar(10000) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -45,12 +45,12 @@ CREATE TABLE IF NOT EXISTS `reservations` (
 DROP TABLE IF EXISTS `resources`;
 CREATE TABLE IF NOT EXISTS `resources` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(500) COLLATE utf8_spanish_ci NOT NULL,
-  `description` varchar(500) COLLATE utf8_spanish_ci NOT NULL,
-  `location` varchar(500) COLLATE utf8_spanish_ci NOT NULL,
-  `image` varchar(1000) COLLATE utf8_spanish_ci NOT NULL,
+  `name` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `description` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `location` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `image` varchar(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `resources`
@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `timeslots` (
   `startTime` datetime NOT NULL,
   `endTime` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -84,11 +84,11 @@ CREATE TABLE IF NOT EXISTS `timeslots` (
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `username` varchar(500) COLLATE utf8_spanish_ci NOT NULL,
-  `password` varchar(1000) COLLATE utf8_spanish_ci NOT NULL,
-  `realname` varchar(500) COLLATE utf8_spanish_ci NOT NULL,
+  `username` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `password` varchar(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `realname` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
