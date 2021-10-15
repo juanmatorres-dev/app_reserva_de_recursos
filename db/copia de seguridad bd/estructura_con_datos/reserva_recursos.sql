@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 14-10-2021 a las 22:14:10
+-- Tiempo de generación: 15-10-2021 a las 10:54:15
 -- Versión del servidor: 8.0.21
 -- Versión de PHP: 7.3.21
 
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `reservations` (
   `idUser` int NOT NULL,
   `idTimeSlot` int NOT NULL,
   `date` datetime NOT NULL,
-  `remarks` varchar(10000) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
+  `remarks` varchar(10000) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -45,10 +45,10 @@ CREATE TABLE IF NOT EXISTS `reservations` (
 DROP TABLE IF EXISTS `resources`;
 CREATE TABLE IF NOT EXISTS `resources` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `description` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `location` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `image` varchar(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `name` varchar(500) NOT NULL,
+  `description` varchar(500) NOT NULL,
+  `location` varchar(500) NOT NULL,
+  `image` varchar(1000) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
@@ -84,9 +84,9 @@ CREATE TABLE IF NOT EXISTS `timeslots` (
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `username` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `password` varchar(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `realname` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `username` varchar(500) NOT NULL,
+  `password` varchar(1000) NOT NULL,
+  `realname` varchar(500) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 COMMIT;
