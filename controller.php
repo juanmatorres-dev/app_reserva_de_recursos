@@ -4,6 +4,7 @@ include ("view.php");
 include ("models/user.php");
 include ("models/security.php");
 
+
 class Controller
 {
 
@@ -23,7 +24,10 @@ class Controller
      * Muestra todos los recursos
      */
     public function showAllResources(){
-        $data['resources'] = DB::dataQuery("SELECT * FROM resources;");
+        //$data['resources'] = DB::dataQuery("SELECT * FROM resources;");
+        //$this->view->show("allResources" , $data);
+        
+        $data['resources'] = Resources::getAll();
         
         $this->view->show("allResources" , $data);
     }

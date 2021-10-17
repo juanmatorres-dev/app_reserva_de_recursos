@@ -1,6 +1,7 @@
 <?php
 
 include("db.php");
+include("resources.php");
 
 class User
 {
