@@ -20,17 +20,7 @@ class Controller
         $this->user = new User(); // Modelo de usuarios
     }
 
-    /**
-     * Muestra todos los recursos
-     */
-    public function showAllResources(){
-        //$data['resources'] = DB::dataQuery("SELECT * FROM resources;");
-        //$this->view->show("allResources" , $data);
-        
-        $data['resources'] = Resources::getAll();
-        
-        $this->view->show("allResources" , $data);
-    }
+
 
 
     /**
