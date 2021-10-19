@@ -1,5 +1,5 @@
 <?php
-include("controller.php");
+include_once("controller.php");
 $controller = new Controller();
 
 // Miramos a ver si hay alguna acción pendiente de realizar

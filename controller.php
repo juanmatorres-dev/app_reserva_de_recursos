@@ -1,8 +1,8 @@
 <?php
 
-include ("view.php");
-include ("models/user.php");
-include ("models/security.php");
+include_once ("view.php");
+include_once ("models/user.php");
+include_once ("models/security.php");
 
 
 class Controller

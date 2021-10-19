@@ -1,7 +1,7 @@
 <?php
 
-include("db.php");
-include("resources.php");
+include_once("db.php");
+include_once("resources.php");
 
 class User
 {
