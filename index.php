@@ -6,12 +6,16 @@ include_once("controllers/resourcesController.php");
 session_start();
 
 //$controller = new Controller();
+
+
+
 $controller = new ResourcesController();
 
 // Miramos a ver si hay alguna acción pendiente de realizar
 if (!isset($_REQUEST['action'])) {
 // No la hay. Usamos la acción por defecto (mostrar el formulario de login)
     //$action = "showLoginForm";
+    $action = "showAllResources";
     $action = "showAllResources";
 } else {
 // Sí la hay. La recuperamos.

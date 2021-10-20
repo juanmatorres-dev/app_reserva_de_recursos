@@ -2,10 +2,10 @@
 
 include_once("db.php");
 
-class Resources {
+class TimeSlots {
 
     public static function getAll(){
-        $result = DB::dataQuery("SELECT * FROM resources;");
+        $result = DB::dataQuery("SELECT * FROM timeslots;");
         return $result;
     }
     
