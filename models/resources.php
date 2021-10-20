@@ -1,6 +1,7 @@
 <?php
 
 include_once("db.php");
+
 class Resources {
 
     public static function getAll(){

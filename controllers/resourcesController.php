@@ -1,20 +1,20 @@
 <?php
 
 include_once("view.php");
-include_once ("models/user.php");
+//include_once ("models/user.php");
 include_once ("models/security.php");
 include_once("models/resources.php");
 
 class ResourcesController {
     
-    private $view, $resource;
+    private $view;
 
     public function __construct()
     {
         $this->view = new View(); // Vistas
-        $this->resource = new Resources(); // Modelo de recursos    
+        DB::createConnection();
     }
-
+    
 
     /**
     * Muestra todos los recursos
@@ -23,7 +23,7 @@ class ResourcesController {
         //$data['resources'] = DB::dataQuery("SELECT * FROM resources;");
         //$this->view->show("allResources" , $data);
         
-        $data['resources'] = Resources::getAll();
+       $data['resources'] = Resources::getAll();
         
         $this->view->show("allResources" , $data);
     }

@@ -34,6 +34,7 @@ class DB {
      * @param $sql El código de la consulta que se quiere lanzar
      * @return array Un array bidimensional con los resultados de la consulta (o null si la consulta no devolvió nada)
      */
+    
     public static function dataQuery($sql) {
         $res = self::$connection->query($sql);
         $resArray = array();
@@ -42,6 +43,7 @@ class DB {
                 $resArray[] = $row;
             }
         } else {
+            
             $resArray = null;
         }
         return $resArray;
