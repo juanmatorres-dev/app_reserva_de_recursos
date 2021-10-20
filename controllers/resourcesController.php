@@ -3,7 +3,7 @@
 include_once("view.php");
 //include_once ("models/user.php");
 include_once ("models/security.php");
-include_once("models/resources.php");
+include_once("models/resourceModel.php");
 
 class ResourcesController {
     
