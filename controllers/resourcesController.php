@@ -25,7 +25,7 @@ class ResourcesController {
         
        $data['resources'] = Resources::getAll();
         
-        $this->view->show("allResources" , $data);
+        $this->view->show("resources/view_all" , $data);
     }
 
 }
