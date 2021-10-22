@@ -5,7 +5,7 @@ include_once("view.php");
 include_once ("models/security.php");
 include_once("models/timeSlotsModel.php");
 
-class ResourcesController {
+class TimeSlotsController {
     
     private $view;
 
@@ -25,7 +25,7 @@ class ResourcesController {
         
        $data['timeSlots'] = TimeSlots::getAll();
         
-        $this->view->show("resources/view_all" , $data);
+        $this->view->show("timeslots/view_all" , $data);
     }
 
 }

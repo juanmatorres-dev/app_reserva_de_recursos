@@ -1,7 +1,7 @@
 <?php
 //include_once("controller.php");
 include_once("controllers/resourcesController.php");
-
+include_once("controllers/timeSlotsController.php");
 
 session_start();
 
@@ -9,14 +9,16 @@ session_start();
 
 
 
-$controller = new ResourcesController();
+//$controller = new ResourcesController();
+$controller = new TimeSlotsController();
 
 // Miramos a ver si hay alguna acción pendiente de realizar
 if (!isset($_REQUEST['action'])) {
 // No la hay. Usamos la acción por defecto (mostrar el formulario de login)
     //$action = "showLoginForm";
-    $action = "showAllResources";
-    $action = "showAllResources";
+    
+    //$action = "showAllResources";
+    $action = "showAllTimeSlots";
 } else {
 // Sí la hay. La recuperamos.
     $action = $_REQUEST['action'];
