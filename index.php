@@ -1,5 +1,6 @@
 <?php
 //include_once("controller.php");
+include_once("controllers/mainMenuController.php");
 include_once("controllers/resourcesController.php");
 include_once("controllers/timeSlotsController.php");
 include_once("controllers/usersController.php");
@@ -9,7 +10,7 @@ session_start();
 
 /* Decidimos que tipo de controlador instanciamos */
 if (!isset($_REQUEST['controller'])) {
-    $controllerName = "ReservationsController";
+    $controllerName = "MainMenuController";
 } else {
     $controllerName = $_REQUEST['controller'];
 }
@@ -33,7 +34,8 @@ if (!isset($_REQUEST['action'])) {
     //$action = "showAllResources";
     //$action = "showAllTimeSlots";
     //$action = "showAllUsers";
-    $action = "showAllReservations";
+    //$action = "showAllReservations";
+    $action = "showMainMenu";
 } else {
 // Sí la hay. La recuperamos.
     $action = $_REQUEST['action'];
