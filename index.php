@@ -5,12 +5,21 @@ include_once("controllers/timeSlotsController.php");
 
 session_start();
 
+/* Decidimos que tipo de controlador instanciamos */
+if (!isset($_REQUEST['controller'])) {
+    $controllerName = "TimeSlotsController";
+} else {
+    $controllerName = $_REQUEST['controller'];
+}
+
+$controller = new $controllerName;
+
 //$controller = new Controller();
 
 
 
 //$controller = new ResourcesController();
-$controller = new TimeSlotsController();
+//$controller = new TimeSlotsController();
 
 // Miramos a ver si hay alguna acción pendiente de realizar
 if (!isset($_REQUEST['action'])) {
