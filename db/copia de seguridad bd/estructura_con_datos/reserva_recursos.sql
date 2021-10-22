@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 22-10-2021 a las 10:14:56
+-- Tiempo de generación: 22-10-2021 a las 11:33:46
 -- Versión del servidor: 8.0.21
 -- Versión de PHP: 7.3.21
 
@@ -35,6 +35,13 @@ CREATE TABLE IF NOT EXISTS `reservations` (
   `date` datetime NOT NULL,
   `remarks` varchar(10000) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `reservations`
+--
+
+INSERT INTO `reservations` (`idResource`, `idUser`, `idTimeSlot`, `date`, `remarks`) VALUES
+(2, 1, 2, '2021-10-22 13:25:51', 'Reserva del salón de actos, para dar una charla sobre Angular.');
 
 -- --------------------------------------------------------
 
