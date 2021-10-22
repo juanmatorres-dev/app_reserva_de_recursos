@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 21-10-2021 a las 18:15:26
+-- Tiempo de generación: 22-10-2021 a las 10:14:56
 -- Versión del servidor: 8.0.21
 -- Versión de PHP: 7.3.21
 
@@ -96,7 +96,15 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `realname` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password`, `realname`) VALUES
+(1, 'admin', '1234', 'Juan Manuel'),
+(2, 'top_sp', '147', 'Javier');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
