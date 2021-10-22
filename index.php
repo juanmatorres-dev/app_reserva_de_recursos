@@ -3,12 +3,13 @@
 include_once("controllers/resourcesController.php");
 include_once("controllers/timeSlotsController.php");
 include_once("controllers/usersController.php");
+include_once("controllers/reservationsController.php");
 
 session_start();
 
 /* Decidimos que tipo de controlador instanciamos */
 if (!isset($_REQUEST['controller'])) {
-    $controllerName = "UsersController";
+    $controllerName = "ReservationsController";
 } else {
     $controllerName = $_REQUEST['controller'];
 }
@@ -22,6 +23,7 @@ $controller = new $controllerName();
 //$controller = new ResourcesController();
 //$controller = new TimeSlotsController();
 //$controller = new UsersController();
+//$controller = new ReservationsController();
 
 // Miramos a ver si hay alguna acción pendiente de realizar
 if (!isset($_REQUEST['action'])) {
@@ -30,7 +32,8 @@ if (!isset($_REQUEST['action'])) {
     
     //$action = "showAllResources";
     //$action = "showAllTimeSlots";
-    $action = "showAllUsers";
+    //$action = "showAllUsers";
+    $action = "showAllReservations";
 } else {
 // Sí la hay. La recuperamos.
     $action = $_REQUEST['action'];
