@@ -23,7 +23,7 @@ class ResourcesController {
         //$data['resources'] = DB::dataQuery("SELECT * FROM resources;");
         //$this->view->show("allResources" , $data);
         
-       $data['resources'] = Resources::getAll();
+        $data['resources'] = Resources::getAll();
         
         $this->view->show("resources/view_all" , $data);
     }
