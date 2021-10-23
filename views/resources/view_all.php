@@ -32,8 +32,8 @@ foreach ($data['resources'] as $resources) {
     echo "<td>" . $resources['location'] . "</td>";
     echo "<td>" . "<img src='" . $resources['image'] . "' width='50px'/>" . "</td>";
 
-    echo "<td><a class='btn btn-outline-info' href='index.php?action=formularioModificarPelicula&id_peliculas=" . $resources['id'] . "'>Modificar</a></td>";
-    echo "<td><a class='btn btn-outline-danger confirmacion' href='index.php?action=borrarPelicula&id_peliculas=" . $resources['id'] . "'>Borrar</a></td>";
+    echo "<td><a class='btn btn-outline-info' href='index.php?action=modify_resource_form&id=" . $resources['id'] . "'>Modificar</a></td>";
+    echo "<td><a class='btn btn-outline-danger confirmacion' href='index.php?controller=ResourcesController&action=deleteResource&id=" . $resources['id'] . "'>Borrar</a></td>";
     echo "</tr>";
 }
 

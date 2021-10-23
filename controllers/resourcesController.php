@@ -28,6 +28,23 @@ class ResourcesController {
         $this->view->show("resources/view_all" , $data);
     }
 
+
+    /**
+     * Edita el recurso seleccionado
+     */
+    public function editResource(){
+
+    }
+
+    /**
+     * Borra un recurso
+     */
+    public function deleteResource(){
+        $id = $_REQUEST["id"];
+        echo $id;
+        Resources::deleteResource($id);
+    }
+
 }
 
 
