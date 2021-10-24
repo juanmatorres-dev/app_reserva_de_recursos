@@ -1,5 +1,7 @@
 <?php
 
+echo "<span id='type_of_content'>timeslots</span>";
+echo "<br/>";
 echo "Mostrando todos los tramos horarios ⌛";
 echo "<br/> <br/><br/>";
 

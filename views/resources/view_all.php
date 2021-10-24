@@ -1,5 +1,7 @@
 <?php
 
+echo "<span id='type_of_content'>resources</span>";
+echo "<br/>";
 echo "Mostrando todos los recursos 💻";
 echo "<br/> <br/><br/>";
 

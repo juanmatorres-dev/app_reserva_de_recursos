@@ -1,5 +1,7 @@
 <?php
 
+echo "<span id='type_of_content'>users</span>";
+echo "<br/>";
 echo "Mostrando todos los usuarios 👫";
 echo "<br/> <br/><br/>";
 
