@@ -25,6 +25,10 @@ while ($fila = $result->fetch_object()) {
 }
 */
 
+echo "<span id='information'></span>";
+echo "<br/>";
+echo "<br/>";
+
 
 if(empty($data['resources']) != 1){ // Comprobamos si hay datos
     echo "<table border=1>";
@@ -37,7 +41,7 @@ if(empty($data['resources']) != 1){ // Comprobamos si hay datos
         echo "<td>" . "<img src='" . $resources['image'] . "' width='50px'/>" . "</td>";
 
         echo "<td><a class='btn btn-outline-info' href='index.php?action=modify_resource_form&id=" . $resources['id'] . "'>Modificar</a></td>";
-        echo "<td><a class='btn btn-outline-danger confirmacion' href='index.php?controller=ResourcesController&action=deleteResource&id=" . $resources['id'] . "'>Borrar</a></td>";
+        echo "<td><a class='btn btn-outline-danger confirmacion' href='index.php?controller=ResourcesController&action=deleteResource&id=" . $resources['id'] .  "'>Borrar</a></td>";
         echo "</tr>";
     }
 

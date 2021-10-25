@@ -41,8 +41,9 @@ class ResourcesController {
      */
     public function deleteResource(){
         $id = $_REQUEST["id"];
-        echo $id;
+        //echo $id;
         Resources::deleteResource($id);
+        echo '<script src="js/back.js"></script>'; 
     }
 
 }
