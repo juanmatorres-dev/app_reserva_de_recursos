@@ -18,6 +18,14 @@ class Resources {
     public static function deleteResource($id){
         DB::dataManipulation("DELETE FROM resources WHERE id = '$id'");
     }
+
+    /**
+     * Edita un recurso
+     */
+    public static function editResource($id, $name, $description, $location, $image){
+        DB::dataManipulation("UPDATE resources SET name = '$name',description = '$description',location = '$location',image = '$image'
+                            WHERE id = '$id'");
+    }
     
 
 }

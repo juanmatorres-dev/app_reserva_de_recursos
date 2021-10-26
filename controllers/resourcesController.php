@@ -33,6 +33,17 @@ class ResourcesController {
      * Edita el recurso seleccionado
      */
     public function editResource(){
+        $this->view->show("resources/edit");
+        
+        // Obtener datos aquí
+
+        $id = $_REQUEST["id"];
+        $name =  $_REQUEST["name"];
+        $description = $_REQUEST["description"];
+        $location = $_REQUEST["location"];
+        $image = $_REQUEST["image"];
+
+        Resources::editResource($id, $name, $description, $location, $image);
 
     }
 
