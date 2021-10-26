@@ -28,6 +28,17 @@ class UsersController {
         $this->view->show("users/view_all" , $data);
     }
 
+
+    /**
+     * Borra un usuario
+     */
+    public function deleteUsers(){
+        $id = $_REQUEST["id"];
+        //echo $id;
+        Users::deleteUser($id);
+        echo '<script src="js/redirect_to/users.js"></script>'; 
+    }
+
 }
 
 

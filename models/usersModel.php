@@ -10,4 +10,13 @@ class Users {
     }
     
 
+
+    /**
+     * Borra un usuario
+     */
+    public static function deleteUser($id){
+        DB::dataManipulation("DELETE FROM users WHERE id = '$id'");
+    }
+
+
 }
