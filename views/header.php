@@ -8,6 +8,7 @@
 <body>
     <div class='header'>
         Esta es la cabecera de mi web
+        <a href="index.php">🏠 Home 🏠</a>
     </div>
     <div class='nav'>
         Esta es la barra de navegación<br>
