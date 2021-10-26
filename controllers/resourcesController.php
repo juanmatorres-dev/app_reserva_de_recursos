@@ -43,7 +43,7 @@ class ResourcesController {
         $id = $_REQUEST["id"];
         //echo $id;
         Resources::deleteResource($id);
-        echo '<script src="js/back.js"></script>'; 
+        echo '<script src="js/redirect_to/resources.js"></script>'; 
     }
 
 }

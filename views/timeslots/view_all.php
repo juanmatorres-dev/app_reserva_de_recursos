@@ -24,21 +24,26 @@ while ($fila = $result->fetch_object()) {
     echo "</tr>";
 }
 */
+if(empty($data['timeSlots']) != 1){
+    echo "<table border=1>";
+    foreach ($data['timeSlots'] as $timeSlots) {
 
-echo "<table border=1>";
-foreach ($data['timeSlots'] as $timeSlots) {
+        echo "<tr>";
+        echo "<td>" . $timeSlots['dayOfWeek'] . "</td>";
+        echo "<td>" . $timeSlots['startTime'] . "</td>";
+        echo "<td>" . $timeSlots['endTime'] . "</td>";
 
-    echo "<tr>";
-    echo "<td>" . $timeSlots['dayOfWeek'] . "</td>";
-    echo "<td>" . $timeSlots['startTime'] . "</td>";
-    echo "<td>" . $timeSlots['endTime'] . "</td>";
+        echo "<td><a class='btn btn-outline-info' href='index.php?action=formularioModificarPelicula&id_peliculas=" . $timeSlots['id'] . "'>Modificar</a></td>";
+        echo "<td><a class='btn btn-outline-danger confirmacion' href='index.php?controller=TimeSlotsController&action=deleteTimeSlots&id=" . $timeSlots['id'] . "'>Borrar</a></td>";
+        echo "</tr>";
+    }
 
-    echo "<td><a class='btn btn-outline-info' href='index.php?action=formularioModificarPelicula&id_peliculas=" . $timeSlots['id'] . "'>Modificar</a></td>";
-    echo "<td><a class='btn btn-outline-danger confirmacion' href='index.php?action=borrarPelicula&id_peliculas=" . $timeSlots['id'] . "'>Borrar</a></td>";
-    echo "</tr>";
+    echo "</table>";
+}else{
+    echo "No se han encontrado tramos horarios ❗";
 }
 
-echo "</table>";
+echo "<br/><br/>";
 
 /* Borrar
 foreach ($data['permissions'] as $permission) {

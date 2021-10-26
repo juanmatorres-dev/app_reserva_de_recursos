@@ -28,6 +28,16 @@ class TimeSlotsController {
         $this->view->show("timeslots/view_all" , $data);
     }
 
+    /**
+     * Borra un tramo horario
+     */
+    public function deleteTimeSlots(){
+        $id = $_REQUEST["id"];
+        //echo $id;
+        TimeSlots::deleteTimeSlots($id);
+        echo '<script src="js/redirect_to/timeslots.js"></script>'; 
+    }
+
 }
 
 
