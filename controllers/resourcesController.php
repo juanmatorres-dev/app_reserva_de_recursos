@@ -32,26 +32,48 @@ class ResourcesController {
 
 
     /**
-     * Edita el recurso seleccionado
+     * Obtiene los datos del recurso seleccionado
      */
-    public function editResource(){
+    public function getResourceData(){
         $id = $_REQUEST["id"];
 
         // Obtener datos aquí
         $data['resources'] = Resources::getResourceById($id);
 
         $this->view->show("resources/edit", $data);
-        
-        /*
+
+    }
+
+    /**
+     * Modifica los datos del recurso
+     */
+    public function editResource() {
+        $id = $_REQUEST["id"];
         $name =  $_REQUEST["name"];
         $description = $_REQUEST["description"];
         $location = $_REQUEST["location"];
-        $image = $_REQUEST["image"];
-        */
+        $image = "uploaded_images/resources/" . basename($_FILES['image']['name']);
 
-        //Resources::editResource($id, $name, $description, $location, $image);
+        //echo $image .  "❗";
 
+
+        /* Carga del archivo */
+
+        $dir_subida = 'uploaded_images/resources/';
+        $fichero_subido = $dir_subida . basename($_FILES['image']['name']);
+
+
+        if (move_uploaded_file($_FILES['image']['tmp_name'], $fichero_subido)) {
+            echo "El fichero es válido y se subió con éxito.\n";
+        } else {
+            echo "¡Error en la subida del fichero!\n";
+        }
+
+
+
+        Resources::editResource($id, $name, $description, $location, $image);
     }
+
 
     /**
      * Borra un recurso

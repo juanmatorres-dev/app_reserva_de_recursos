@@ -44,7 +44,7 @@ if(empty($data['resources']) != 1){ // Comprobamos si hay datos
         echo "<td>" . $resources['location'] . "</td>";
         echo "<td>" . "<img src='" . $resources['image'] . "' width='50px'/>" . "</td>";
 
-        echo "<td><a class='btn btn-outline-info' href='index.php?controller=ResourcesController&action=editResource&id=" . $resources['id'] . "'>Modificar</a></td>";
+        echo "<td><a class='btn btn-outline-info' href='index.php?controller=ResourcesController&action=getResourceData&id=" . $resources['id'] . "'>Modificar</a></td>";
         echo "<td><a class='btn btn-outline-danger confirmacion' href='index.php?controller=ResourcesController&action=deleteResource&id=" . $resources['id'] .  "'>Borrar</a></td>";
         echo "</tr>";
     }
