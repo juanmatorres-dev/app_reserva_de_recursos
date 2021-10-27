@@ -6,7 +6,9 @@ echo "<h1>Editar recurso</h1>";
 
 foreach ($data['resources'] as $resources) {
 
-  echo "<form enctype='multipart/form-data' action = 'index.php?action=editResource&controller=ResourcesController' method = 'POST'>
+  echo "<form enctype='multipart/form-data' action = 'index.php' method = 'POST'>
+            <input type='hidden' name='action' value='editResource'>
+            <input type='hidden' name='controller' value='ResourcesController'>
 				    <input type='hidden' name='id' value='" . $resources['id'] . "'>
                     Nombre:<input class='form-control' type='text' name='name' size='85' value='" . $resources['name'] . "' required><br>
                     Descripción:<input class='form-control' type='text' name='description' size='85' value='" . $resources['description'] . "' required><br>

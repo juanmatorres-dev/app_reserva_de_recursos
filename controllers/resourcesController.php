@@ -89,6 +89,15 @@ class ResourcesController {
         //echo '<script src="js/redirect_to/resources.js"></script>'; 
     }
 
+
+    /**
+     * Añade un nuevo recurso
+     */
+    public function addNewResource() {
+        # code...
+    }
+
+
 }
 
 
