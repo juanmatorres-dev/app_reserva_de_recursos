@@ -24,6 +24,12 @@ while ($fila = $result->fetch_object()) {
     echo "</tr>";
 }
 */
+
+if (isset($data['mensaje'])) { // Mensaje de borrado
+    echo $data['mensaje'];
+}
+
+
 if(empty($data['timeSlots']) != 1){
     echo "<table border=1>";
     foreach ($data['timeSlots'] as $timeSlots) {

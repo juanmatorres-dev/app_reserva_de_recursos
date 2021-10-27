@@ -19,12 +19,14 @@ class TimeSlotsController {
     /**
     * Muestra todos los recursos
      */
-    public function showAllTimeSlots(){
+    public function showAllTimeSlots($mensaje = null){
         //$data['resources'] = DB::dataQuery("SELECT * FROM resources;");
         //$this->view->show("allResources" , $data);
         
-       $data['timeSlots'] = TimeSlots::getAll();
-        
+        $data['timeSlots'] = TimeSlots::getAll();
+        $data['mensaje'] = $mensaje; // Mensaje de borrado
+
+
         $this->view->show("timeslots/view_all" , $data);
     }
 
@@ -35,7 +37,9 @@ class TimeSlotsController {
         $id = $_REQUEST["id"];
         //echo $id;
         TimeSlots::deleteTimeSlots($id);
-        echo '<script src="js/redirect_to/timeslots.js"></script>'; 
+        $this->showAllTimeSlots("Tramo horario borrado con éxito 🗑");
+        
+        //echo '<script src="js/redirect_to/timeslots.js"></script>'; 
     }
 
 }

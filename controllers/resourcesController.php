@@ -18,12 +18,14 @@ class ResourcesController {
 
     /**
     * Muestra todos los recursos
-     */
-    public function showAllResources(){
+    * @param String $mensaje Mensaje de borrado de un recurso 
+    */
+    public function showAllResources($mensaje = null){
         //$data['resources'] = DB::dataQuery("SELECT * FROM resources;");
         //$this->view->show("allResources" , $data);
         
         $data['resources'] = Resources::getAll();
+        $data['mensaje'] = $mensaje; // Mensaje de borrado
         
         $this->view->show("resources/view_all" , $data);
     }
@@ -33,17 +35,21 @@ class ResourcesController {
      * Edita el recurso seleccionado
      */
     public function editResource(){
-        $this->view->show("resources/edit");
-        
-        // Obtener datos aquí
-
         $id = $_REQUEST["id"];
+
+        // Obtener datos aquí
+        $data['resources'] = Resources::getResourceById($id);
+
+        $this->view->show("resources/edit", $data);
+        
+        /*
         $name =  $_REQUEST["name"];
         $description = $_REQUEST["description"];
         $location = $_REQUEST["location"];
         $image = $_REQUEST["image"];
+        */
 
-        Resources::editResource($id, $name, $description, $location, $image);
+        //Resources::editResource($id, $name, $description, $location, $image);
 
     }
 
@@ -54,7 +60,9 @@ class ResourcesController {
         $id = $_REQUEST["id"];
         //echo $id;
         Resources::deleteResource($id);
-        echo '<script src="js/redirect_to/resources.js"></script>'; 
+        //$data['resources'] = Resources::getAll();
+        $this->showAllResources("Recurso borrado con éxito 🗑");
+        //echo '<script src="js/redirect_to/resources.js"></script>'; 
     }
 
 }

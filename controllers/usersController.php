@@ -19,12 +19,13 @@ class UsersController {
     /**
     * Muestra todos los recursos
      */
-    public function showAllUsers(){
+    public function showAllUsers($mensaje = null){
         //$data['resources'] = DB::dataQuery("SELECT * FROM resources;");
         //$this->view->show("allResources" , $data);
         
-       $data['users'] = Users::getAll();
-        
+        $data['users'] = Users::getAll();
+        $data['mensaje'] = $mensaje; // Mensaje de borrado
+
         $this->view->show("users/view_all" , $data);
     }
 
@@ -36,7 +37,8 @@ class UsersController {
         $id = $_REQUEST["id"];
         //echo $id;
         Users::deleteUser($id);
-        echo '<script src="js/redirect_to/users.js"></script>'; 
+        $this->showAllUsers("Usuario borrado con éxito 🗑");
+        //echo '<script src="js/redirect_to/users.js"></script>'; 
     }
 
 }

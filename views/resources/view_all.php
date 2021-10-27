@@ -29,6 +29,10 @@ echo "<span id='information'></span>";
 echo "<br/>";
 echo "<br/>";
 
+if (isset($data['mensaje'])) { // Mensaje de borrado
+    echo $data['mensaje'];
+}
+
 
 if(empty($data['resources']) != 1){ // Comprobamos si hay datos
     echo "<table border=1>";

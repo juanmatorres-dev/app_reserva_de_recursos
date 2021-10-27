@@ -25,6 +25,10 @@ while ($fila = $result->fetch_object()) {
 }
 */
 
+if (isset($data['mensaje'])) { // Mensaje de borrado
+    echo $data['mensaje'];
+}
+
 if(empty($data['users']) != 1){
     echo "<table border=1>";
     foreach ($data['users'] as $users) {

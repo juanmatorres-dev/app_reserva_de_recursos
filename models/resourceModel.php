@@ -13,6 +13,15 @@ class Resources {
     }
 
     /**
+     * Obtiene los datos de recursos con un id concreto
+     */
+    public static function getResourceById($id){
+        $result = DB::dataQuery("SELECT * FROM resources WHERE id = '$id';");
+        return $result;
+    }
+
+
+    /**
      * Borra un recurso
      */
     public static function deleteResource($id){
