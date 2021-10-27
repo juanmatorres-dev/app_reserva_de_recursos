@@ -1,7 +1,7 @@
 <?php
 
 
-echo "<h1>hola edit</h1>";
+echo "<h1>Editar recurso</h1>";
 
 
 foreach ($data['resources'] as $resources) {
@@ -18,7 +18,7 @@ foreach ($data['resources'] as $resources) {
 echo "  <input type='hidden' name='action' value='editResource'>
   <input class='btn btn-outline-primary' type='submit' value='Modificar'>
 </form>";
-echo "<br/><p><a class='btn btn-primary btn-sm' href='index.php'>Volver</a></p>";
+echo "<br/><p><a class='btn btn-primary btn-sm' href='index.php?action=showAllResources&controller=ResourcesController'>Volver</a></p>";
 
 
 }

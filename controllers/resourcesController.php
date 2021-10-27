@@ -72,6 +72,8 @@ class ResourcesController {
 
 
         Resources::editResource($id, $name, $description, $location, $image);
+
+        $this->showAllResources("Recurso editado correctamente ✔");
     }
 
 
