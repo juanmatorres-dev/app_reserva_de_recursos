@@ -39,7 +39,7 @@ if(empty($data['timeSlots']) != 1){
         echo "<td>" . $timeSlots['startTime'] . "</td>";
         echo "<td>" . $timeSlots['endTime'] . "</td>";
 
-        echo "<td><a class='btn btn-outline-info' href='index.php?action=formularioModificarPelicula&id_peliculas=" . $timeSlots['id'] . "'>Modificar</a></td>";
+        echo "<td><a class='btn btn-outline-info' href='index.php?controller=TimeSlotsController&action=getTimeSlotData&id=" . $timeSlots['id'] . "'>Modificar</a></td>";
         echo "<td><a class='btn btn-outline-danger confirmacion' href='index.php?controller=TimeSlotsController&action=deleteTimeSlots&id=" . $timeSlots['id'] . "'>Borrar</a></td>";
         echo "</tr>";
     }

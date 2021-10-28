@@ -42,6 +42,39 @@ class TimeSlotsController {
         //echo '<script src="js/redirect_to/timeslots.js"></script>'; 
     }
 
+
+    
+    /**
+     * Obtiene los datos del tramo horario seleccionado
+     */
+    public function getTimeSlotData(){
+        $id = $_REQUEST["id"];
+
+        // Obtener datos aquí
+        $data['timeSlots'] = TimeSlots::getTimeslotsById($id);
+
+        $this->view->show("timeslots/edit", $data);
+
+    }
+
+
+
+    /**
+     * Modifica los datos del tramo horario
+     */
+    public function editTimeslots() {
+        $id = $_REQUEST["id"];
+        $dayOfWeek =  $_REQUEST["dayOfWeek"];
+        $startTime = $_REQUEST["startTime"];
+        $endTime = $_REQUEST["endTime"];
+
+
+
+        TimeSlots::editTimeslots($id, $dayOfWeek, $startTime, $endTime);
+
+        $this->showAllTimeSlots("Tramo horario editado correctamente ✔");
+    }
+
 }
 
 
