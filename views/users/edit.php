@@ -10,9 +10,9 @@ foreach ($data['users'] as $users) {
             <input type='hidden' name='action' value='editUser'>
             <input type='hidden' name='controller' value='UsersController'>
 				    <input type='hidden' name='id' value='" . $users['id'] . "'>
-                    Nombre de ususario:<input class='form-control' type='text' name='name' size='85' value='" . $users['username'] . "' required><br>
-                    Contraseña:<input class='form-control' type='password' name='description' size='85' value='" . $users['password'] . "' required><br>
-                    Nombre real:<input class='form-control' type='text' name='location' size='85' value='" . $users['realname'] . "' required><br>
+                    Nombre de usuario:<input class='form-control' type='text' name='username' size='85' value='" . $users['username'] . "' required><br>
+                    Contraseña:<input class='form-control' type='password' name='password' size='85' value='" . $users['password'] . "' required><br>
+                    Nombre real:<input class='form-control' type='text' name='realname' size='85' value='" . $users['realname'] . "' required><br>
                     ";
 
 // Finalizamos el formulario
