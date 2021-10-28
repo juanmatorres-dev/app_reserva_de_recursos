@@ -41,6 +41,37 @@ class UsersController {
         //echo '<script src="js/redirect_to/users.js"></script>'; 
     }
 
+
+    /**
+     * Obtiene los datos del usuario seleccionado
+     */
+    public function getUserData(){
+        $id = $_REQUEST["id"];
+
+        // Obtener datos aquí
+        $data['users'] = Users::getUserById($id);
+
+        $this->view->show("users/edit", $data);
+
+    }
+
+
+    /**
+     * Modifica los datos del usuario
+     */
+    public function editUser() {
+        $id = $_REQUEST["id"];
+        $username =  $_REQUEST["username"];
+        $password = $_REQUEST["password"];
+        $realname = $_REQUEST["realname"];
+
+
+
+        Users::editUser($id, $username, $password, $realname);
+
+        $this->showAllUsers("Usuario editado correctamente ✔");
+    }
+
 }
 
 

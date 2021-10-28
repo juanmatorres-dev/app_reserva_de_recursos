@@ -19,4 +19,21 @@ class Users {
     }
 
 
+    /**
+     * Obtiene los datos de un usuario con un id concreto
+     */
+    public static function getUserById($id){
+        $result = DB::dataQuery("SELECT * FROM users WHERE id = '$id';");
+        return $result;
+    }
+
+    /**
+     * Edita un usuario
+     */
+    public static function editUser($id, $username, $password, $realname){
+        DB::dataManipulation("UPDATE users SET username = '$username',password = '$password',realname = '$realname'
+                            WHERE id = '$id'");
+    }
+
+
 }
