@@ -36,4 +36,14 @@ class TimeSlots {
     }
 
 
+    /**
+     * Añade un nuevo tramo horario
+     */
+    public static function addNewTimeslot($dayOfWeek ,$startTime, $endTime) {
+        DB::dataManipulation("INSERT INTO timeslots (dayOfWeek ,startTime, endTime) VALUES ('$dayOfWeek' ,'$startTime', '$endTime')");
+        
+    }
+
+
+
 }

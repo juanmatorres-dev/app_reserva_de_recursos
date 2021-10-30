@@ -51,6 +51,8 @@ if(empty($data['timeSlots']) != 1){
 
 echo "<br/><br/>";
 
+echo "<a class='btn btn-outline-info' href='index.php?controller=TimeSlotsController&action=getNewTimeslotData'>Añadir</a>";
+
 /* Borrar
 foreach ($data['permissions'] as $permission) {
     echo "<a href='index.php?action=" . $permission['action'] . "'>" . $permission['description'] . "</a><br>";

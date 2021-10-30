@@ -75,6 +75,36 @@ class TimeSlotsController {
         $this->showAllTimeSlots("Tramo horario editado correctamente ✔");
     }
 
+    
+    /**
+     * Obtiene los datos de un nuevo tramo horario por el formulario
+     */
+    public function getNewTimeslotData(){
+
+        $this->view->show("timeslots/add");
+
+    }
+
+    /**
+     * Añade un nuevo tramo horario
+     */
+    public function addNewTimeslot() {
+
+        $dayOfWeek =  $_REQUEST["dayOfWeek"];
+        $startTime = $_REQUEST["startTime"];
+        $endTime = $_REQUEST["endTime"];
+        
+
+        TimeSlots::addNewTimeslot($dayOfWeek, $startTime, $endTime);
+        
+        $this->showAllTimeSlots("Tramo horario añadido correctamente ✔");
+    }
+
+
+
+
+
+
 }
 
 
