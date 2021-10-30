@@ -57,7 +57,7 @@ if(empty($data['resources']) != 1){ // Comprobamos si hay datos
 
 echo "<br/><br/>";
 
-echo "<a class='btn btn-outline-info' href='index.php?controller=ResourcesController&action=addNewResource'>Añadir</a>";
+echo "<a class='btn btn-outline-info' href='index.php?controller=ResourcesController&action=getNewResourceData'>Añadir</a>";
 
 /* Borrar
 foreach ($data['permissions'] as $permission) {

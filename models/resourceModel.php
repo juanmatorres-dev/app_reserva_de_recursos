@@ -36,5 +36,12 @@ class Resources {
                             WHERE id = '$id'");
     }
     
+    /**
+     * Añade un nuevo recurso
+     */
+    public static function addNewResource($name, $description, $location, $image) {
+        DB::dataManipulation("INSERT INTO resources (name, description, location, image) VALUES ('$name', '$description', '$location', '$image')");
+        
+    }
 
 }

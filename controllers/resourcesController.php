@@ -91,10 +91,43 @@ class ResourcesController {
 
 
     /**
+     * Obtiene los datos de un nuevo recurso por el formulario
+     */
+    public function getNewResourceData(){
+
+        $this->view->show("resources/add");
+
+    }
+
+    /**
      * Añade un nuevo recurso
      */
     public function addNewResource() {
-        # code...
+
+        $name =  $_REQUEST["name"];
+        $description = $_REQUEST["description"];
+        $location = $_REQUEST["location"];
+        $image = "uploaded_images/resources/" . basename($_FILES['image']['name']);
+
+        //echo $image .  "❗";
+
+
+        /* Carga del archivo */
+
+        $dir_subida = 'uploaded_images/resources/';
+        $fichero_subido = $dir_subida . basename($_FILES['image']['name']);
+
+
+        if (move_uploaded_file($_FILES['image']['tmp_name'], $fichero_subido)) {
+            echo "El fichero es válido y se subió con éxito.\n";
+        } else {
+            echo "¡Error en la subida del fichero!\n";
+        }
+
+
+        Resources::addNewResource($name, $description, $location, $image);
+        
+        $this->showAllResources("Recurso añadido correctamente ✔");
     }
 
 
