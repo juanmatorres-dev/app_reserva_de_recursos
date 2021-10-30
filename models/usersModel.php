@@ -36,4 +36,13 @@ class Users {
     }
 
 
+    /**
+     * Añade un nuevo usuario
+     */
+    public static function addNewUser($username, $password, $realname) {
+        DB::dataManipulation("INSERT INTO users (username, password, realname) VALUES ('$username', '$password', '$realname')");
+        
+    }
+
+
 }

@@ -72,6 +72,32 @@ class UsersController {
         $this->showAllUsers("Usuario editado correctamente ✔");
     }
 
+
+    /**
+     * Obtiene los datos de un nuevo usuario por el formulario
+     */
+    public function getNewUserData(){
+
+        $this->view->show("users/add");
+
+    }
+
+    /**
+     * Añade un nuevo usuario
+     */
+    public function addNewUser() {
+
+        $username =  $_REQUEST["username"];
+        $password = $_REQUEST["password"];
+        $realname = $_REQUEST["realname"];
+        
+        Users::addNewUser($username, $password, $realname);
+        
+        $this->showAllUsers("Usuario registrado correctamente ✔");
+    }
+
+
+
 }
 
 
