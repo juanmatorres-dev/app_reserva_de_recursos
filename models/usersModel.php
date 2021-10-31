@@ -31,7 +31,8 @@ class Users {
      * Edita un usuario
      */
     public static function editUser($id, $username, $password, $realname){
-        DB::dataManipulation("UPDATE users SET username = '$username',password = '$password',realname = '$realname'
+        $password_md5 = md5($password);
+        DB::dataManipulation("UPDATE users SET username = '$username',password = '$password_md5',realname = '$realname'
                             WHERE id = '$id'");
     }
 
@@ -40,7 +41,8 @@ class Users {
      * Añade un nuevo usuario
      */
     public static function addNewUser($username, $password, $realname) {
-        DB::dataManipulation("INSERT INTO users (username, password, realname) VALUES ('$username', '$password', '$realname')");
+        $password_md5 = md5($password);
+        DB::dataManipulation("INSERT INTO users (username, password, realname) VALUES ('$username', '$password_md5', '$realname')");
         
     }
 
