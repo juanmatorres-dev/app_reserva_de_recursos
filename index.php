@@ -8,6 +8,7 @@ include_once("controllers/reservationsController.php");
 
 session_start();
 
+
 /* Decidimos que tipo de controlador instanciamos */
 if (!isset($_REQUEST['controller'])) {
     $controllerName = "MainMenuController";
@@ -16,6 +17,7 @@ if (!isset($_REQUEST['controller'])) {
 }
 
 $controller = new $controllerName();
+
 
 //$controller = new Controller();
 
@@ -28,16 +30,16 @@ $controller = new $controllerName();
 
 // Miramos a ver si hay alguna acción pendiente de realizar
 if (!isset($_REQUEST['action'])) {
-// No la hay. Usamos la acción por defecto (mostrar el formulario de login)
+    // No la hay. Usamos la acción por defecto (mostrar el formulario de login)
     //$action = "showLoginForm";
-    
+
     //$action = "showAllResources";
     //$action = "showAllTimeSlots";
     //$action = "showAllUsers";
     //$action = "showAllReservations";
     $action = "showMainMenu";
 } else {
-// Sí la hay. La recuperamos.
+    // Sí la hay. La recuperamos.
     $action = $_REQUEST['action'];
 }
 

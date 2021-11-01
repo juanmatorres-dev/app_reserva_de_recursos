@@ -1,7 +1,7 @@
 <?php
 
 include_once("view.php");
-//include_once ("models/user.php");
+include_once ("models/user.php");
 include_once ("models/security.php");
 
 class MainMenuController {
@@ -11,6 +11,7 @@ class MainMenuController {
     public function __construct()
     {
         $this->view = new View(); // Vistas
+        DB::createConnection();
     }
     
 
@@ -27,7 +28,43 @@ class MainMenuController {
         $this->view->show("reservations/view_all" , $data);
         */
 
-        $this->view->show("mainMenu"); // No le pasamos null, ya que en en view.php , tiene asignado null por defecto
+        //$this->view->show("mainMenu"); // Borrar después ❗❗❗❗❗❗❗❗❗❗❗❗
+        
+        if(Security::thereIsSession()){
+            $this->view->show("mainMenu"); // No le pasamos null, ya que en en view.php , tiene asignado null por defecto
+        }else{
+            echo "<h1>No has iniciado sesión</h1>";
+            $this->view->show("users/loguin_form");
+        }
+
+        
+    }
+
+    /**
+     * Comprueba si el usuario existe
+     */
+    public function checkLogin(){
+        //$id = $_REQUEST["id"];
+        $username =  $_REQUEST["username"];
+        $password = $_REQUEST["password"];
+        //$realname = $_REQUEST["realname"];
+
+        echo "checkLogin";
+        echo "<br/>";
+        echo $username;
+        echo "<br/>";
+        echo $password;
+
+        $userData = User::checkLogin($username, $password);
+
+        if($userData == null){
+            echo "<h1> ❌ El usuario o la contraseña son incorrectos ❌</h1>";
+            $this->view->show("users/loguin_form");
+        }else{
+            echo "<h1>Usuario validado ✔</h1>";
+            $this->view->show("mainMenu"); // No le pasamos null, ya que en en view.php , tiene asignado null por defecto
+        }
+        
     }
 
 }

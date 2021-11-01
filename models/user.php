@@ -21,6 +21,7 @@ class User
      * @param String $pass La contraseña del usuario que se quiere comprobar
      * @return User $usuario Si el usuario existe, devuelve un array con todos los campos del usuario en su interior. Si no, devuelve un objeto null
      */
+    /*
     public function checkLogin($email, $pass)
     {
        $result = DB::dataQuery("SELECT * FROM users WHERE email = '$email' AND password = '$pass'");
@@ -28,6 +29,32 @@ class User
             return $result[0];
         else
             return null;
+    }
+    */
+
+    /**
+     * Comprueba si un nombre de usuario y una password pertenecen a algún usuario de la base  de datos.
+     * @param String $username El nombre de usuario que se quiere comprobar
+     * @param String $password La contraseña del usuario que se quiere comprobar
+     * @return User $usuario Si el usuario existe, devuelve un array con todos los campos del usuario en su interior. Si no, devuelve un objeto null
+     */
+    public static function checkLogin($username, $password) {
+        $password_md5 = md5($password);
+
+        $result = DB::dataQuery("SELECT * FROM users WHERE username = '$username' AND password = '$password_md5'");
+        
+        if($result == null){
+            //echo "❓";
+            return null;
+        }else{
+            if (count($result) > 0){
+                return $result[0];
+            }else{
+                return null;
+            }
+        }
+        
+            
     }
 
     /**

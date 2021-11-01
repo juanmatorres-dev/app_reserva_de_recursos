@@ -36,6 +36,10 @@ class DB {
      */
     
     public static function dataQuery($sql) {
+        
+        echo "<br/>";
+        echo $sql;
+
         $res = self::$connection->query($sql);
         $resArray = array();
         if ($res->num_rows > 0) {
