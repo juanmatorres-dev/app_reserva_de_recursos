@@ -48,17 +48,26 @@ class MainMenuController {
      */
     public function checkLogin(){
         //$id = $_REQUEST["id"];
-        $username =  $_REQUEST["username"];
-        $password = $_REQUEST["password"];
         //$realname = $_REQUEST["realname"];
 
+        $username =  $_REQUEST["username"];
+        $password = $_REQUEST["password"];
+
+        $userData = User::checkLogin($username, $password);
+
+        $id = $userData['id'];
+        $realname = $userData['realname'];
+
+        echo "<br/>";
         echo "checkLogin";
+        echo "<br/>";
+        echo "id : " . $id . " | nombre : " . $realname;
         echo "<br/>";
         echo $username;
         echo "<br/>";
         echo $password;
 
-        $userData = User::checkLogin($username, $password);
+
 
         if($userData == null){
             echo "<h1> ❌ El usuario o la contraseña son incorrectos ❌</h1>";
