@@ -35,6 +35,9 @@ class MainMenuController {
         }else{
             echo "<h1>No has iniciado sesión</h1>";
             $this->view->show("users/loguin_form");
+            
+            //$errorLogin = "<h1>No has iniciado sesión</h1>";
+            //include_once("views/users/loguin_form.php");
         }
 
         

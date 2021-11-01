@@ -1,5 +1,10 @@
 <?php
 
+/*
+if(isset($errorLogin)){
+    echo $errorLogin;
+}
+*/
 
 echo "<h1>Iniciar sesión</h1>";
 
