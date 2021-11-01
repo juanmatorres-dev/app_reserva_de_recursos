@@ -14,7 +14,7 @@ echo "<h1>Iniciar sesión</h1>";
 echo "  <input type='hidden' name='action' value='checkLogin'>
   <input class='btn btn-outline-primary' type='submit' value='Iniciar sesión'>
 </form>";
-echo "<br/><p><a class='btn btn-primary btn-sm' href='index.php?action=showAllUsers&controller=UsersController'>Registrarse</a></p>";
+echo "<br/><p><a class='btn btn-primary btn-sm' href='index.php?action=getNewUserData&controller=UsersController'>Registrarse</a></p>";
 
 
 
