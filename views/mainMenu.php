@@ -23,7 +23,7 @@ echo "<a href='index.php?action=showAllUsers&controller=UsersController'>Manteni
 echo "<br/>";
 echo "<br/>";
 
-echo "<a href='index.php?action=closeSession'>Cerrar sesión</a>";
+echo "<a href='index.php?action=closeSession&controller=MainMenuController'>Cerrar sesión</a>";
 
 
 

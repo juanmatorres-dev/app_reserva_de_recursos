@@ -74,9 +74,18 @@ class MainMenuController {
             $this->view->show("users/loguin_form");
         }else{
             echo "<h1>Usuario validado ✔</h1>";
+            Security::createSession($id);
+            echo "<h1>Bienevenido $realname</h1>";
             $this->view->show("mainMenu"); // No le pasamos null, ya que en en view.php , tiene asignado null por defecto
         }
         
+    }
+
+
+    public function closeSession(){
+        Security::closeSession();
+        echo "<h1>Sesión cerrada con éxito</h1>";
+        $this->view->show("users/loguin_form");
     }
 
 }
