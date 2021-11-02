@@ -98,7 +98,11 @@ class UsersController {
         
         Users::addNewUser($username, $password, $realname);
         
-        $this->showAllUsers("Usuario registrado correctamente ✔");
+        //$this->showAllUsers("Usuario registrado correctamente ✔");
+        include_once('views/menu/closedSession.php');
+        include_once('views/notifications/welcomeNewUser.php');
+        $this->view->show("users/loguin_form");
+        
     }
 
 
