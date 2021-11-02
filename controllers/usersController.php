@@ -81,7 +81,7 @@ class UsersController {
      */
     public function getNewUserData(){
 
-        include_once('views/menu/openSession.php');
+        include_once('views/menu/closedSession.php');
 
         $this->view->show("users/add");
 
