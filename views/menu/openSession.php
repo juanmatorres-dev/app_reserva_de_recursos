@@ -10,15 +10,15 @@
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Gestionar recursos
+                    <a class="nav-link" href="index.php?action=showAllResources&controller=ResourcesController">Gestionar recursos
                         <span class="visually-hidden">(current)</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Gestionar tramos horarios</a>
+                    <a class="nav-link" href="index.php?action=showAllTimeSlots&controller=TimeSlotsController">Gestionar tramos horarios</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Ver usuarios</a>
+                    <a class="nav-link" href="index.php?action=showAllUsers&controller=UsersController">Ver usuarios</a>
                 </li>
                 <!--
                 <li class="nav-item dropdown">
