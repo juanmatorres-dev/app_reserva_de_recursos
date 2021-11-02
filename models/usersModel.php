@@ -46,5 +46,13 @@ class Users {
         
     }
 
+    /**
+     * Obtiene el nombre de un usuario con un id concreto
+     */
+    public static function getUserNameByid($id){
+        $result = DB::dataQuery("SELECT username FROM users WHERE id = '$id';");
+        return $result;
+    }
+
 
 }

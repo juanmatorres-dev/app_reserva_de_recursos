@@ -97,6 +97,17 @@ class UsersController {
     }
 
 
+    /**
+     * 
+     */
+    public static function getUserNameByid(){
+        $id = Security::getUserId();
+
+        Users::getUserNameByid($id);
+
+    }
+
+
 
 }
 

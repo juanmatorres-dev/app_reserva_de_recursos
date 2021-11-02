@@ -7,8 +7,9 @@ class Security {
      * Crea una sesión
      * @param $idUser El id del usuario logueado
      */
-    public static function createSession($idUser) {
+    public static function createSession($idUser,$username) {
         $_SESSION['idUser'] = $idUser;
+        $_SESSION['username'] = $username;
     }
 
     /**
@@ -24,6 +25,13 @@ class Security {
      */
     public static function getUserId() {
         return $_SESSION['idUser'];
+    }
+
+    /**
+     * Devuelve el nombre del usuario logueado
+     */
+    public static function getUserName() {
+        return $_SESSION['username'];
     }
 
     /**

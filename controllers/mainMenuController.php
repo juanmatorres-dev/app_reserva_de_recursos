@@ -31,9 +31,11 @@ class MainMenuController {
         //$this->view->show("mainMenu"); // Borrar después ❗❗❗❗❗❗❗❗❗❗❗❗
         
         if(Security::thereIsSession()){
+            include_once('views/menu/openSession.php');
             $this->view->show("mainMenu"); // No le pasamos null, ya que en en view.php , tiene asignado null por defecto
         }else{
             echo "<h1>No has iniciado sesión</h1>";
+            include_once('views/menu/closedSession.php');
             $this->view->show("users/loguin_form");
             
             //$errorLogin = "<h1>No has iniciado sesión</h1>";
@@ -74,7 +76,7 @@ class MainMenuController {
             $this->view->show("users/loguin_form");
         }else{
             echo "<h1>Usuario validado ✔</h1>";
-            Security::createSession($id);
+            Security::createSession($id, $username);
             echo "<h1>Bienevenido $realname</h1>";
             $this->view->show("mainMenu"); // No le pasamos null, ya que en en view.php , tiene asignado null por defecto
         }
