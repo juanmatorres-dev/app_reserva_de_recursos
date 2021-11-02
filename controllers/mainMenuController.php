@@ -34,7 +34,7 @@ class MainMenuController {
             include_once('views/menu/openSession.php');
             $this->view->show("mainMenu"); // No le pasamos null, ya que en en view.php , tiene asignado null por defecto
         }else{
-            echo "<h1>No has iniciado sesión</h1>";
+            //echo "<h1>No has iniciado sesión</h1>";
             include_once('views/menu/closedSession.php');
             $this->view->show("users/loguin_form");
             

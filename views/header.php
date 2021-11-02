@@ -28,4 +28,4 @@
         }
         ?>
     </div>
-    <div class='container'>
+    <div class='form_container'>

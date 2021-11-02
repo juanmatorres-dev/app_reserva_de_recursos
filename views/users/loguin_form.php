@@ -33,7 +33,7 @@ echo "  <input type='hidden' name='action' value='checkLogin'>
   <input class='btn btn-outline-primary buttons' type='submit' value='Iniciar sesión'>
   </p>
 </form>
-</p>";
+";
 
 echo "<br/><p class='button_container'><a class='btn btn-primary btn-sm buttons' href='index.php?action=getNewUserData&controller=UsersController'>Registrarse</a></p>";
 
