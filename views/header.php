@@ -8,17 +8,20 @@
     <link rel="stylesheet" type="text/css" href="assets/bootstrap/bootswatch/cerulean/bootstrap.css" /> <!-- https://bootswatch.com/cerulean/ -->
     <link rel="stylesheet" type="text/css" href="assets/forms/forms.css" />
     <link rel="stylesheet" type="text/css" href="assets/menu/menu.css" />
+    <link rel="stylesheet" type="text/css" href="assets/notifications/notifications.css" />
 </head>
 
 <body>
     <div class='header'>
-        Esta es la cabecera de mi web
-        <a href="index.php">🏠 Home 🏠</a>
+        <!--
+            Esta es la cabecera de mi web
+            <a href="index.php">🏠 Home 🏠</a>
+        -->
     </div>
 
 
     <div class='nav'>
-        Esta es la barra de navegación<br>
+        <!--Esta es la barra de navegación<br>-->
         <?php
         if (Security::thereIsSession()) {
             echo "User id: " . Security::getUserId() . "<br>";

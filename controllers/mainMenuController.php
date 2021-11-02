@@ -87,7 +87,9 @@ class MainMenuController {
 
     public function closeSession(){
         Security::closeSession();
-        echo "<h1>Sesión cerrada con éxito</h1>";
+        include_once('views/menu/closedSession.php');
+        //echo "<h1>Sesión cerrada con éxito</h1>";
+        include_once('views/notifications/closedSession.php');
         $this->view->show("users/loguin_form");
     }
 
