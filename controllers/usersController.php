@@ -83,8 +83,8 @@ class UsersController {
 
         include_once('views/menu/closedSession.php');
 
-        $this->view->show("users/add");
-
+        //$this->view->show("users/add");
+        $this->view->show("users/register_form");
     }
 
     /**
