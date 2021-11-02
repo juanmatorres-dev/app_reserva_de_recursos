@@ -23,6 +23,8 @@ class TimeSlotsController {
         //$data['resources'] = DB::dataQuery("SELECT * FROM resources;");
         //$this->view->show("allResources" , $data);
         
+        include_once('views/menu/openSession.php');
+
         $data['timeSlots'] = TimeSlots::getAll();
         $data['mensaje'] = $mensaje; // Mensaje de borrado
 
@@ -53,6 +55,8 @@ class TimeSlotsController {
         // Obtener datos aquí
         $data['timeSlots'] = TimeSlots::getTimeslotsById($id);
 
+        include_once('views/menu/openSession.php');
+
         $this->view->show("timeslots/edit", $data);
 
     }
@@ -80,6 +84,8 @@ class TimeSlotsController {
      * Obtiene los datos de un nuevo tramo horario por el formulario
      */
     public function getNewTimeslotData(){
+        
+        include_once('views/menu/openSession.php');
 
         $this->view->show("timeslots/add");
 

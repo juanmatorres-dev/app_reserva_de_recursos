@@ -24,6 +24,8 @@ class ResourcesController {
         //$data['resources'] = DB::dataQuery("SELECT * FROM resources;");
         //$this->view->show("allResources" , $data);
         
+        include_once('views/menu/openSession.php');
+
         $data['resources'] = Resources::getAll();
         $data['mensaje'] = $mensaje; // Mensaje de borrado
         
@@ -39,6 +41,8 @@ class ResourcesController {
 
         // Obtener datos aquí
         $data['resources'] = Resources::getResourceById($id);
+        
+        include_once('views/menu/openSession.php');
 
         $this->view->show("resources/edit", $data);
 
@@ -69,9 +73,10 @@ class ResourcesController {
             echo "¡Error en la subida del fichero!\n";
         }
 
-
+        
 
         Resources::editResource($id, $name, $description, $location, $image);
+        
 
         $this->showAllResources("Recurso editado correctamente ✔");
     }
@@ -94,6 +99,8 @@ class ResourcesController {
      * Obtiene los datos de un nuevo recurso por el formulario
      */
     public function getNewResourceData(){
+        
+        include_once('views/menu/openSession.php');
 
         $this->view->show("resources/add");
 

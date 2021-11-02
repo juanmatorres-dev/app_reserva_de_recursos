@@ -60,6 +60,7 @@ class MainMenuController {
         $id = $userData['id'];
         $realname = $userData['realname'];
 
+        /*
         echo "<br/>";
         echo "checkLogin";
         echo "<br/>";
@@ -68,7 +69,7 @@ class MainMenuController {
         echo $username;
         echo "<br/>";
         echo $password;
-
+        */
 
 
         if($userData == null){

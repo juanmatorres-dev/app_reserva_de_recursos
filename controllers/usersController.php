@@ -23,6 +23,8 @@ class UsersController {
         //$data['resources'] = DB::dataQuery("SELECT * FROM resources;");
         //$this->view->show("allResources" , $data);
         
+        include_once('views/menu/openSession.php');
+
         $data['users'] = Users::getAll();
         $data['mensaje'] = $mensaje; // Mensaje de borrado
 
@@ -51,6 +53,8 @@ class UsersController {
         // Obtener datos aquí
         $data['users'] = Users::getUserById($id);
 
+        include_once('views/menu/openSession.php');
+
         $this->view->show("users/edit", $data);
 
     }
@@ -66,7 +70,6 @@ class UsersController {
         $realname = $_REQUEST["realname"];
 
 
-
         Users::editUser($id, $username, $password, $realname);
 
         $this->showAllUsers("Usuario editado correctamente ✔");
@@ -77,6 +80,8 @@ class UsersController {
      * Obtiene los datos de un nuevo usuario por el formulario
      */
     public function getNewUserData(){
+
+        include_once('views/menu/openSession.php');
 
         $this->view->show("users/add");
 
