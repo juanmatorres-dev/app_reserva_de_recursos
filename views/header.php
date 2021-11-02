@@ -1,9 +1,11 @@
 <!DOCTYPE html> 
-<html lang="es-ES"> 
+<html lang="es"> 
 <head>
     <title>Gestor de recursos</title>
     <!-- Aquí incluiría cualquier CSS o JS que vaya a usar por toda la web -->
     <!-- Por ejemplo: <link rel="stylesheet" type="text/css" href="assets/style.css"> -->
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap/bootswatch/cerulean/bootstrap.css" /> <!-- https://bootswatch.com/cerulean/ -->
+    <link rel="stylesheet" type="text/css" href="assets/forms/forms.css" />
 </head>
 <body>
     <div class='header'>

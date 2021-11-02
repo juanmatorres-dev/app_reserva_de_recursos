@@ -1,0 +1,22 @@
+.form_title {
+    text-align: center;
+}
+
+form {
+    width: 234px;
+    margin: 0px auto;
+}
+
+.button_container {
+    width: 100%;
+    text-align: center;
+}
+
+.buttons {
+    width: 150px;   
+}
+
+
+.login_center {
+    margin: 0px auto;
+}
