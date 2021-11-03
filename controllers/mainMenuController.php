@@ -76,9 +76,10 @@ class MainMenuController {
             echo "<h1> ❌ El usuario o la contraseña son incorrectos ❌</h1>";
             $this->view->show("users/loguin_form");
         }else{
-            echo "<h1>Usuario validado ✔</h1>";
+            //echo "<h1>Usuario validado ✔</h1>";
             Security::createSession($id, $username);
-            echo "<h1>Bienevenido $realname</h1>";
+            //echo "<h1>Bienevenido $realname</h1>";
+            include_once('views/menu/openSession.php');
             $this->view->show("mainMenu"); // No le pasamos null, ya que en en view.php , tiene asignado null por defecto
         }
         
