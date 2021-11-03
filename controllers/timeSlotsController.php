@@ -32,6 +32,27 @@ class TimeSlotsController {
         $this->view->show("timeslots/view_all" , $data);
     }
 
+
+    /**
+    * Muestra todos los recursos
+     */
+    public function showAllTimeSlotsForReservation($mensaje = null){
+        //$data['resources'] = DB::dataQuery("SELECT * FROM resources;");
+        //$this->view->show("allResources" , $data);
+        
+        include_once('views/menu/openSession.php');
+
+        $data['timeSlots'] = TimeSlots::getAll();
+        $data['mensaje'] = $mensaje; // Mensaje de borrado
+
+        $idResource = $_REQUEST["idResource"];
+        $data['idResource'] = $idResource;
+
+        //echo "✔ . $idResource";
+
+        $this->view->show("timeslots/view_all_reservation" , $data);
+    }
+
     /**
      * Borra un tramo horario
      */

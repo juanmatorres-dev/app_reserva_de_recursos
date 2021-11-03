@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="assets/forms/forms.css" />
     <link rel="stylesheet" type="text/css" href="assets/menu/menu.css" />
     <link rel="stylesheet" type="text/css" href="assets/notifications/notifications.css" />
+    <link rel="stylesheet" type="text/css" href="assets/steps/step.css" />
 </head>
 
 <body>

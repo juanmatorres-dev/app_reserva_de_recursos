@@ -28,6 +28,24 @@ class ReservationsController {
         $this->view->show("reservations/view_all" , $data);
     }
 
+    /**
+    * Guarda el id de un recurso en una reserva
+     */
+    public function createNewReservations(){
+        //$data['resources'] = DB::dataQuery("SELECT * FROM resources;");
+        //$this->view->show("allResources" , $data);
+        
+        $idResource = $_REQUEST["idResource"];
+        $idTimeSlot = $_REQUEST["idTimeSlot"];
+        $idUser = Security::getUserId();
+        $date = null;
+        $remarks = "";
+
+       $data['reservations'] = Reservations::addNewResource($idResource, $idUser, $idTimeSlot, $date, $remarks);
+        
+        $this->view->show("reservations/view_all" , $data);
+    }
+
 }
 
 

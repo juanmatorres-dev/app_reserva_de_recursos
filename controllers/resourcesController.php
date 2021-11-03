@@ -34,6 +34,24 @@ class ResourcesController {
 
 
     /**
+    * Muestra todos los recursos
+    * @param String $mensaje Mensaje de borrado de un recurso 
+    */
+    public function showAllResourcesForReservation($mensaje = null){
+        //$data['resources'] = DB::dataQuery("SELECT * FROM resources;");
+        //$this->view->show("allResources" , $data);
+        
+        include_once('views/menu/openSession.php');
+
+        $data['resources'] = Resources::getAll();
+        $data['mensaje'] = $mensaje; // Mensaje de borrado
+        
+        $this->view->show("resources/view_all_reservation" , $data);
+    }
+
+
+
+    /**
      * Obtiene los datos del recurso seleccionado
      */
     public function getResourceData(){

@@ -20,6 +20,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?action=showAllUsers&controller=UsersController">Ver usuarios</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php?action=showAllResourcesForReservation&controller=ResourcesController">Realizar reserva</a>
+                </li>
                 <!--
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
